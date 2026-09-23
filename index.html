@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Hub | Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 flex h-screen overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-900 text-white flex flex-col">
+        <div class="h-16 flex items-center px-6 border-b border-gray-800 font-bold text-xl tracking-wider">
+            <i class="fa-solid fa-video text-brand-500 mr-3"></i> PROD HUB
+        </div>
+        <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
+            <a href="#" class="flex items-center px-4 py-3 bg-brand-600 text-white rounded-lg transition-colors">
+                <i class="fa-solid fa-chart-line w-6"></i>
+                <span class="font-medium">Dashboard Overview</span>
+            </a>
+            <a href="#" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition-colors">
+                <i class="fa-solid fa-camera w-6"></i>
+                <span class="font-medium">Shooting Schedule</span>
+            </a>
+            <a href="#" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition-colors">
+                <i class="fa-solid fa-scissors w-6"></i>
+                <span class="font-medium">Editing Pipeline</span>
+            </a>
+            <a href="#" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition-colors">
+                <i class="fa-regular fa-calendar w-6"></i>
+                <span class="font-medium">Master Calendar</span>
+            </a>
+            <a href="#" class="flex items-center px-4 py-3 text-gray-400 hover:bg-gray-800 hover:text-white rounded-lg transition-colors">
+                <i class="fa-solid fa-compress text-sm w-6"></i>
+                <span class="font-medium">Video Summaries</span>
+            </a>
+        </nav>
+        <div class="p-4 border-t border-gray-800">
+            <div class="flex items-center">
+                <img src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff" alt="User Profile" class="w-8 h-8 rounded-full">
+                <div class="ml-3">
+                    <p class="text-sm font-medium">Admin User</p>
+                    <p class="text-xs text-gray-400">Local Environment</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col overflow-hidden">
+        <!-- Top Header -->
+        <header class="h-16 bg-white shadow-sm flex items-center justify-between px-8 z-10 border-b border-gray-200">
+            <h1 class="text-2xl font-bold text-gray-800">Command Center</h1>
+            <div class="flex items-center space-x-4">
+                <button class="bg-brand-600 hover:bg-brand-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                    <i class="fa-solid fa-plus mr-2"></i> New Project
+                </button>
+            </div>
+        </header>
+
+        <!-- Scrollable Workspace -->
+        <div class="flex-1 overflow-y-auto p-8 bg-gray-100">
+            
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-bold text-gray-800">Active Pipelines</h2>
+            </div>
+            
+            <!-- Side-by-Side Sheets Section -->
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-8">
+                
+                <!-- Shooting Schedule Card -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center bg-gray-50">
+                        <h3 class="font-semibold text-gray-700 flex items-center">
+                            <i class="fa-solid fa-video text-brand-500 mr-2"></i> Shooting Schedule
+                        </h3>
+                        <a href="https://docs.google.com/spreadsheets/d/1LngBVB5fiEyDvKKImXY76jm-EW80RzqfS2S2e8XYrfQ/edit" target="_blank" class="text-sm text-brand-600 hover:text-brand-800 font-medium transition-colors">
+                            Open Sheet <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                    <div class="flex-1 bg-white">
+                        <iframe 
+                            src="https://docs.google.com/spreadsheets/d/1LngBVB5fiEyDvKKImXY76jm-EW80RzqfS2S2e8XYrfQ/edit" 
+                            class="w-full h-full min-h-[800px] border-none block"
+                            title="Shooting Schedule">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Editing Schedule Card -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 flex flex-col overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center bg-gray-50">
+                        <h3 class="font-semibold text-gray-700 flex items-center">
+                            <i class="fa-solid fa-scissors text-purple-500 mr-2"></i> Editing Pipeline
+                        </h3>
+                        <a href="https://docs.google.com/spreadsheets/d/16RriAMk_7Aa7-uLVLgq2p_84C5bI-wnDQLAR7VtFMuI/edit?" target="_blank" class="text-sm text-brand-600 hover:text-brand-800 font-medium transition-colors">
+                            Open Sheet <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                    <div class="flex-1 bg-white">
+                        <iframe 
+                            src="https://docs.google.com/spreadsheets/d/16RriAMk_7Aa7-uLVLgq2p_84C5bI-wnDQLAR7VtFMuI/edit?" 
+                            class="w-full h-full min-h-[800px] border-none block"
+                            title="Editing Pipeline">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
